@@ -1,0 +1,13 @@
+{   
+    "137": {
+        "chain_name": "Polygon Mainnet",
+        "niftsy_erc20": "0x432cdbC749FD96AA35e1dC27765b23fDCc8F5cf1",
+        "sbtv1_address": "0xf2B919B54848639e552C697D6F39a544AC6D2328"
+    }, 
+    
+    "31337": {
+        "chain_name": "Dev Local",
+        "niftsy_erc20": "0x432cdbC749FD96AA35e1dC27765b23fDCc8F5cf1",
+        "sbtv1_address": "0xf2B919B54848639e552C697D6F39a544AC6D2328"
+    }
+}
