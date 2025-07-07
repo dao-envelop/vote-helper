@@ -1,14 +1,22 @@
 // SPDX-License-Identifier: MIT
-// ENVELOP(NIFTSY) protocol V1 for NFT. 
+// ENVELOP(NIFTSY) protocol V1 for NFT.
 pragma solidity ^0.8.21;
 
-/// @title Flibrary ETypes in Envelop PrtocolV1 
+/// @title Flibrary ETypes in Envelop PrtocolV1
 /// @author Envelop Team
 /// @notice This contract implement main protocol's data types
 library ETypes {
+    enum AssetType {
+        EMPTY,
+        NATIVE,
+        ERC20,
+        ERC721,
+        ERC1155,
+        FUTURE1,
+        FUTURE2,
+        FUTURE3
+    }
 
-    enum AssetType {EMPTY, NATIVE, ERC20, ERC721, ERC1155, FUTURE1, FUTURE2, FUTURE3}
-    
     struct Asset {
         AssetType assetType;
         address contractAddress;
@@ -22,18 +30,18 @@ library ETypes {
 
     struct NFTItem {
         address contractAddress;
-        uint256 tokenId;   
+        uint256 tokenId;
     }
 
     struct Fee {
         bytes1 feeType;
         uint256 param;
-        address token; 
+        address token;
     }
 
     struct Lock {
         bytes1 lockType;
-        uint256 param; 
+        uint256 param;
     }
 
     struct Royalty {
@@ -49,7 +57,6 @@ library ETypes {
         Lock[] locks;
         Royalty[] royalties;
         bytes2 rules;
-
     }
 
     struct INData {
@@ -59,9 +66,8 @@ library ETypes {
         Lock[] locks;
         Royalty[] royalties;
         AssetType outType;
-        uint256 outBalance;      //0- for 721 and any amount for 1155
+        uint256 outBalance; //0- for 721 and any amount for 1155
         bytes2 rules;
-
     }
 
     struct WhiteListItem {
@@ -75,5 +81,4 @@ library ETypes {
         bytes2 onlythis;
         bytes2 disabled;
     }
-
 }
