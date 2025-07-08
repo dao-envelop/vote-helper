@@ -36,5 +36,5 @@ jobs:
 
       - name: Run Forge tests
         run: |
-          forge test --no-auto-detect --fork-url https://polygon-rpc.com  --fork-block-number 73688443 -vvv
+          forge test --profile ci --fork-url https://polygon-rpc.com --fork-block-number 73688443 -vvv
         id: test
